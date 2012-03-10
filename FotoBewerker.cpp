@@ -12,7 +12,8 @@
 FotoBewerker::FotoBewerker()
 {
 	this->fotoScherm = new FotoScherm();
-	this->showFotoScherm();
+	fotoScherm->show();
+//	this->showFotoScherm();   original
 }
 
 //destructor verwijdert fotoscherm

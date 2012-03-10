@@ -24,7 +24,12 @@ OptieScherm::OptieScherm( Screen* parent )
 	//stel achtergrondkleur in
 
 	//maak rode knop
-	this->roodLabel = new Label( ... );
+
+	Label* label = new Label(0,0,0,0,NULL);
+	label->setBackgroundColor(0x000000);
+
+
+	this->roodLabel = new Label( 200, 250, 80, 30, label, "Mooi plaatje", 0, font );
 	roodLabel->setSkin( skin );
 	this->kleurLabels.add( roodLabel );	//voeg toe aan vector
 
@@ -36,8 +41,8 @@ OptieScherm::OptieScherm( Screen* parent )
 	//stel grootte plaatje in m.b.v. editbox
 
 	//stel naam plaatje in m.b.v. editbocx
-	this->editBox = new EditBox( ... );
-	this->editBox->setSkin( skin );
+//	this->editBox = new EditBox( ... );
+//	this->editBox->setSkin( skin );
 }
 
 OptieScherm::~OptieScherm()
@@ -50,7 +55,7 @@ OptieScherm::~OptieScherm()
 int OptieScherm::getAchtergrondOptie()
 {
 	//return achtergrond kleur
-	return this->achtergrondKleur;
+//	return this->achtergrondKleur;
 }
 
 
@@ -58,7 +63,7 @@ int OptieScherm::getAchtergrondOptie()
 const BasicString<char> OptieScherm::getImagetekst()
 {
 	//verander editBox naar jouw editboxs
-	return this->editBox->getCaption(); //caption is de text in een editbox
+//	return this->editBox->getCaption(); //caption is de text in een editbox
 }
 
 
@@ -71,15 +76,15 @@ void OptieScherm::keyPressEvent(int keyCode, int nativeCode)
 void OptieScherm::pointerPressEvent(MAPoint2d point)
 {
 	//doorloop alle kleurlabels om selectie in te stellen
-	for( ... )
-	{
+//	for( ... )
+//	{
 		//kijk of label in het touch-punt valt
 
 		//niet in touch punt? deselect!
-	}
+//	}
 
 
 	//behandel de editbox bij selecteren (touch), verander de editBox naar je eigen editbox(en)
-	}
+//	}
 }
 
