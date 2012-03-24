@@ -9,15 +9,14 @@
 #define OPTIESCHERM_H_
 
 
-#include <MAUTIL/Moblet.h>
 #include <MAUI/Screen.h>
 #include <MAUI/Label.h>
 #include <MAUI/EditBox.h>
-#include <MAUI/ListBox.h>
 
+#include <MAUTIL/Moblet.h>
 #include <MAUTIL/Vector.h>
 
-#include "conprint.h"
+#include <mastdlib.h>
 
 #include "MAHeaders.h"
 
@@ -29,23 +28,27 @@ using namespace MAUI;
 class OptieScherm : public Screen
 {
 private:
-	Screen* parent;
+	Screen* parent; // parent screen (FotoScherm)
 
-	Vector<Label*> kleurLabels;
-	Label* roodLabel;
-	Label* groenLabel;
-	Label* blauwLabel;
-
-	//todo: voeg editboxen en waardes toe die opgeslagen moeten worden
+	Vector<Label*> kleurLabels; // array van achtergrond kleuren
+	Label* roodLabel; // rode knop
+	Label* groenLabel; // groene knop
+	Label* blauwLabel; // blauwe knope
+	EditBox* imageTekst; // tekst onder plaatje (om in te stellen)
+	EditBox* imageSize; // grootte van plaatje (om in te stellen)
+	Label* toepasLabel; // toepasknop
+	int achtergrondKleur; // achtergrondkleur
+	int grootte; // grootte van plaatje
 
 public:
-	OptieScherm( Screen* parent );
-	virtual ~OptieScherm();
+	OptieScherm( Screen* parent ); // constructor OptieScherm (= screen)
+	virtual ~OptieScherm(); // deconstructor OptieScherm
 
-	void keyPressEvent(int keyCode, int nativeCode);
-	void pointerPressEvent(MAPoint2d point);
+	void keyPressEvent(int keyCode, int nativeCode); // key event
+	void pointerPressEvent(MAPoint2d point); // touch event
 
-	int getAchtergrondOptie();
+	int getAchtergrondOptie(); // haal op welke selectie er is gemaakt voor achtergrondkleur
+	int getImageSize(); // geef grootte van plaatje
 	const BasicString<char>getImagetekst(); //geeft text van editbox terug
 };
 

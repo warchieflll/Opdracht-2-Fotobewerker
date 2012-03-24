@@ -35,18 +35,20 @@ using namespace MAUI;
 
 
 //deze klasse is een Screen
+// HTTP oefen stuk staat na screen. Fotoscherm is dus: screen, connectie en listener.
 class FotoScherm : public Screen
 {
 private:
 	//bevat een optiescherm, een label voor achtergrondkleur, een label voor tekst en een image
-	OptieScherm* optieScherm;
-	Label* achtergrondLabel;
-	Label* imageTekst;
-	Image* image;
+	OptieScherm* optieScherm; // het OptieScherm
+	Label* achtergrondLabel; // achtergrondkleur
+	Label* imageTekst; // tekst onder het plaatje
+	Image* image; // het plaatje
 
 public:
 	FotoScherm();
 	virtual ~FotoScherm();
+	void run( MAEvent event );
 
 	//kan key en touch events opvangen
 	void keyPressEvent(int keyCode, int nativeCode);
